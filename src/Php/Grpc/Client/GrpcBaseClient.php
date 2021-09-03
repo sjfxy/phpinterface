@@ -71,7 +71,9 @@ class GrpcBaseClient implements GrpcServiceinterface
             return  $address;
         }
         $address = $this->grpcSericeInter->GetServiceByName($servicename);
-        $this->cacheInterface->Store($servicename,$address,env("REDIS_CACHE_TIME_OUT",3600));
+        if (env("REDIS_CACHE_ENABLE","false")=="true"){
+            $this->cacheInterface->Store($servicename,$address,env("REDIS_CACHE_TIME_OUT",3600));
+        }
         return  $address;
     }
 
