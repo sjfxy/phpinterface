@@ -11,4 +11,9 @@ interface GrpcRegisterinterface
      * @return mixed
      */
    function GetServiceByName($service_name,$randType);
+
+   //服务注册服务信息 内部调用各自的env的配置信息
+   function ServiceRegister();
+
+   function ServiceUnRegister();//服务卸载
 }
