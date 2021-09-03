@@ -1,0 +1,23 @@
+{
+    "name": "98624/phpinterface",
+    "autoload": {
+        "psr-4": {
+            "GPBMetadata\\": "src/Php/Grpc/GPBMetadata"
+        },
+       "classmap": ["src/"],
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Shijun",
+            "email": "986244259@qq.com"
+        }
+    ],
+    "require": {
+        "grpc/grpc": "^1.39",
+        "vlucas/phpdotenv": "^5.3",
+        "sensiolabs/consul-php-sdk": "3.1.1"
+    }
+}
