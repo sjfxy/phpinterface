@@ -41,6 +41,10 @@ class Pay extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string OldTxamt = 7;</code>
      */
     protected $OldTxamt = '';
+    /**
+     * Generated from protobuf field <code>string Version = 8;</code>
+     */
+    protected $Version = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Pay extends \Google\Protobuf\Internal\Message
      *     @type string $CarId
      *     @type string $Txamt
      *     @type string $OldTxamt
+     *     @type string $Version
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class Pay extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->OldTxamt = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Version = 8;</code>
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+
+    /**
+     * Generated from protobuf field <code>string Version = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->Version = $var;
 
         return $this;
     }
