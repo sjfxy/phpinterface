@@ -1,5 +1,6 @@
 {
     "name": "huangshengfe/phpinterface",
+    "license": "BSD-3-Clause",
     "autoload": {
         "psr-4": {
             "GPBMetadata\\": "src/Php/Grpc/GPBMetadata"
