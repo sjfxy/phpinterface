@@ -39,11 +39,19 @@ class GrpcBaseClient implements GrpcServiceinterface
 
     public function Registry()
     {
+        if (empty($this->grpcSericeInter))
+        {
+            $this->grpcSericeInter = new ConsuleRegister();
+        }
         $this->grpcSericeInter->ServiceRegister();
     }
 
     public function UnRegistry()
     {
+        if (empty($this->grpcSericeInter))
+        {
+            $this->grpcSericeInter = new ConsuleRegister();
+        }
         // TODO: Implement UnRegistry() method.
         $this->grpcSericeInter->ServiceUnRegister();
     }
