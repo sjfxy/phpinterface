@@ -1,5 +1,5 @@
 <?php
-namespace Grpc;
+namespace Client;
 use Client\GrpcBaseClient;
 use Grpc\ChannelCredentials;
 class BaseClient extends \Grpc\BaseStub

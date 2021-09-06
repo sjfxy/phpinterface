@@ -3,15 +3,17 @@
 
 namespace Votes;
 
-use Client\GrpcBaseClient;
+use Client\BaseClient;
+
 
 /**
  */
-class PaySvcClient extends GrpcBaseClient {
+class PaySvcClient extends BaseClient {
 
     const SERVICENAME = "vote.svc";
 
     public function __construct($host="") {
+
         $this->setServiceName(self::SERVICENAME);
         parent::__construct($host);
     }
