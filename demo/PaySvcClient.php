@@ -4,13 +4,13 @@
 namespace Votes;
 
 use Client\GrpcBaseClient;
-use Grpc\BaseClient;
-use Grpc\ChannelCredentials;
+
 /**
  */
-class PaySvcClient extends BaseClient {
+class PaySvcClient extends GrpcBaseClient {
 
     const SERVICENAME = "vote.svc";
+
     public function __construct($host="") {
         $this->setServiceName(self::SERVICENAME);
         parent::__construct($host);
@@ -23,11 +23,11 @@ class PaySvcClient extends BaseClient {
      * @return \Votes\ReplyGetPayinfo
      */
     public function GetInfo(\Votes\ArgsGetPayInfo $argument,
-      $metadata = [], $options = []) {
+                                                  $metadata = [], $options = []) {
         return $this->_simpleRequest('/votes.PaySvc/GetInfo',
-        $argument,
-        ['\Votes\ReplyGetPayinfo', 'decode'],
-        $metadata, $options);
+            $argument,
+            ['\Votes\ReplyGetPayinfo', 'decode'],
+            $metadata, $options);
     }
 
 }

@@ -3,17 +3,17 @@
 
 namespace Votes;
 
+use Client\GrpcBaseClient;
+
 /**
  */
-class PaySvcClient extends \Grpc\BaseStub {
+class PaySvcClient extends GrpcBaseClient {
 
-    /**
-     * @param string $hostname hostname
-     * @param array $opts channel options
-     * @param \Grpc\Channel $channel (optional) re-use channel object
-     */
-    public function __construct($hostname, $opts, $channel = null) {
-        parent::__construct($hostname, $opts, $channel);
+    const SERVICENAME = "vote.svc";
+
+    public function __construct($host="") {
+        $this->setServiceName(self::SERVICENAME);
+        parent::__construct($host);
     }
 
     /**
