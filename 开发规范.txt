@@ -1,0 +1,26 @@
+一.所有的 rpc服务 都是以 .proto 文件进行输出
+二. Go调用Go的Rpc服务 信息 必须传递各自的 Context 进行超时控制 延迟控制
+三. Go调用关系必须使用Jagger进行收集处理
+四. 定义好Go的proto文件 使用 proto-gen-go protoc-gen-php proc-gen-nodejs 生成各自的客户端信息
+五. php版本的客户端和grpc-go客户端保持统一-使用Redis连接池-使用ContextPool使用Consul做服务发现
+六. PHP版本在Go的子仓库-github.com-composer-进行更新 需要保证 自己的仓库信息保持统一
+七. 关于版本的统一 本地和开发机环境 Go-1.16 拥抱Go-1.17 Go-1.18反射 Php版本 php7.4 版本之上
+八.  关于rpc服务之间的管理 少即是多 不要过度 优化 保证代码之间的高内聚和低耦合 即可
+九.  代码之间的组织关系参考 Go官方的代码仓库进行组织 每个包做自己的事情 命令-执行分离
+十.  关于在本地是否 进行收集 probuf strace 进行查看debug信息 根据项目本身的流量进行按需处理方式
+十一. 代码中不可以有硬代码 编写可拆分 可单独的 TDD BDD的 代码
+十二. 注意Java的设计模式和Go的差别 要学会使用代理模式,装饰器模式,函数签名,接口适配器模式
+
+
+以后只关注 网络本身的Http2.0通信的方式 Socket-Bind-Listen-Tcp-GrpcServer,HttpServer,MqServer,Http1.1-Webscoket
+网络传输:protobuf 编码解码
+server: grpcServer
+协议: http2.0
+服务限流-交给网关去处理-网关的组合grpc服务的方式
+服务熔断-分布式的熔断方式 hystrix-go
+服务注册: consul etcd nacos eruca zookper
+PHP版本自己去composer require 即可
+
+Go版本client支持版本的概念
+
+
