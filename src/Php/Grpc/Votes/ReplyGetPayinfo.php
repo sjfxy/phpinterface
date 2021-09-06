@@ -21,6 +21,10 @@ class ReplyGetPayinfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string version = 2;</code>
      */
     protected $version = '';
+    /**
+     * Generated from protobuf field <code>.votes.Response res = 3;</code>
+     */
+    protected $res = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class ReplyGetPayinfo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Votes\Pay $data
      *     @type string $version
+     *     @type \Votes\Response $res
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +92,38 @@ class ReplyGetPayinfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.votes.Response res = 3;</code>
+     * @return \Votes\Response|null
+     */
+    public function getRes()
+    {
+        return $this->res;
+    }
+
+    public function hasRes()
+    {
+        return isset($this->res);
+    }
+
+    public function clearRes()
+    {
+        unset($this->res);
+    }
+
+    /**
+     * Generated from protobuf field <code>.votes.Response res = 3;</code>
+     * @param \Votes\Response $var
+     * @return $this
+     */
+    public function setRes($var)
+    {
+        GPBUtil::checkMessage($var, \Votes\Response::class);
+        $this->res = $var;
 
         return $this;
     }
